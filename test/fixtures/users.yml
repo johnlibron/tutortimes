@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+unregistered:
+  name: Unregistered
+  email: unregistered@example.com
+  token: UNREGISTERED
+
+registered:
+  name: Registered
+  email: registered@example.com
+  token: REGISTERED

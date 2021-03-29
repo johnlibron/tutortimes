@@ -1,0 +1,20 @@
+// Place all the styles related to the Registrations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.time_slot {
+  display: flex;
+  padding: 1rem;
+  margin: 2px;
+  &.registered {
+    background-color: palegreen;
+  }
+  h3 {
+    flex-grow: 1;
+    margin: 0 2rem;
+  }
+  input[type=submit] {
+    font-size: 1rem;
+    width: 6rem;
+  }
+}

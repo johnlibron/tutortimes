@@ -1,0 +1,8 @@
+<h1>Tutor Times for <%= @user.name %></h1>
+
+<hr>
+
+<% @time_slots.group_by { |s| s.begins_at.to_date }.each do |date, time_slots| %>
+  <h2><%= date.to_s(:date) %></h2>
+  <%= render partial: "time_slot", collection: time_slots %>
+<% end %>

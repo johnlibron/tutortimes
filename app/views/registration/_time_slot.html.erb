@@ -1,0 +1,17 @@
+<% registered = @user.time_slot_ids.include?(time_slot.id) %>
+
+<%= tag.div class: [:time_slot, (:registered if registered)] do %>
+  <time>
+    <%= time_slot.begins_at.to_s(:time) %>—<%= time_slot.ends_at.to_s(:time) %>
+  </time>
+
+  <h3>
+    <%= time_slot.name %>
+  </h3>
+
+  <% if registered %>
+    <%= button_to "Cancel", cancel_path(@user.token, time_slot.id), method: :delete %>
+  <% else %>
+    <%= button_to "Register", register_path(@user.token, time_slot.id), method: :put %>
+  <% end %>
+<% end %>

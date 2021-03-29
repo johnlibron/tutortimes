@@ -1,0 +1,10 @@
+<% content_for :header do %>
+<nav>
+  <p>
+    <strong>Manage:</strong>
+    <%= link_to_unless_current "Time Slots", { controller: "time_slots", action: "index" } %> |
+    <%= link_to_unless_current "Users", { controller: "users", action: "index" } %>
+  </p>
+</nav>
+<% end %>
+<%= render template: "layouts/application" %>
