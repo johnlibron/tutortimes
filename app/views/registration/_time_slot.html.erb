@@ -1,6 +1,6 @@
 <% registered = @user.time_slot_ids.include?(time_slot.id) %>
 
-<%= tag.div class: [:time_slot, (:registered if registered)] do %>
+<%= tag.div class: [:time_slot, (:registered if registered), (:full if not registered and time_slot.registrations_count >= time_slot.capacity)] do %>
   <time>
     <%= time_slot.begins_at.to_s(:time) %>—<%= time_slot.ends_at.to_s(:time) %>
   </time>
@@ -12,6 +12,6 @@
   <% if registered %>
     <%= button_to "Cancel", cancel_path(@user.token, time_slot.id), method: :delete %>
   <% else %>
-    <%= button_to "Register", register_path(@user.token, time_slot.id), method: :put %>
+    <%= button_to "Register", register_path(@user.token, time_slot.id), method: :put, :disabled => time_slot.registrations_count >= time_slot.capacity %>
   <% end %>
 <% end %>

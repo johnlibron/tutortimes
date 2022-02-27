@@ -12,7 +12,8 @@ time_slots = (0..10).map do
   duration = [30, 45, 60, 90].sample.minutes
   begins_at = 1.month.from_now.utc.at_noon + offset
   ends_at = begins_at + duration
-  TimeSlot.create!(name: name, begins_at: begins_at, ends_at: ends_at)
+  capacity = rand(5..10)
+  TimeSlot.create!(name: name, begins_at: begins_at, ends_at: ends_at, capacity: capacity)
 end
 
 users = (0..10).map do

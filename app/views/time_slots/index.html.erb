@@ -9,6 +9,7 @@
       <th>Begins at</th>
       <th>Ends at</th>
       <th>Registrations</th>
+      <th>Capacity</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= time_slot.begins_at %></td>
         <td><%= time_slot.ends_at %></td>
         <td><%= time_slot.registrations_count %></td>
+        <td><%= time_slot.capacity %></td>
         <td><%= link_to "Show", time_slot %></td>
         <td><%= link_to "Edit", edit_time_slot_path(time_slot) %></td>
         <td><%= link_to "Destroy", time_slot, method: :delete, data: { confirm: "Are you sure?" } %></td>

@@ -6,8 +6,13 @@ class RegistrationController < ApplicationController
   end
 
   def register
-    @user.registrations.create!(time_slot_id: params[:time_slot_id])
-    redirect_to action: :show
+    @selected_time_slot = TimeSlot.find(params[:time_slot_id])
+    if @selected_time_slot.registrations_count < @selected_time_slot.capacity
+      @user.registrations.create!(time_slot_id: params[:time_slot_id])
+      redirect_to action: :show
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def cancel
