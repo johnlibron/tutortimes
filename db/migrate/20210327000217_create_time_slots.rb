@@ -5,7 +5,7 @@ class CreateTimeSlots < ActiveRecord::Migration[6.1]
       t.datetime :begins_at
       t.datetime :ends_at
       t.integer :registrations_count, default: 0
-      t.integer :capacity
+      t.integer :capacity, default: 0
       t.timestamps
     end
   end

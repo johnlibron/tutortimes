@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_03_27_000305) do
     t.datetime "begins_at"
     t.datetime "ends_at"
     t.integer "registrations_count", default: 0
-    t.integer "capacity", null: false
+    t.integer "capacity", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -3,7 +3,7 @@ require 'csv'
 class ExportController < ApplicationController
 
     # GET /export/:date
-    def index
+    def export
         registrations = Registration.joins(:user)
         time_slots = TimeSlot.ordered.all
 
@@ -54,6 +54,9 @@ class ExportController < ApplicationController
                     end
                 end
             end
+            render status: :ok
+        else
+            render status: :unprocessable_entity
         end
 
     end

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   put "/registration/:token/:time_slot_id", to: "registration#register", as: :register
   delete "/registration/:token/:time_slot_id", to: "registration#cancel", as: :cancel
   put "/registration/:token/:selected_time_slot_id/:conflict_time_slot_ids", to: "registration#register_conflict_time_slot", as: :register_conflict_time_slot
-  get "/export/:date", to: "export#index", as: :index
+  get "/export/:date", to: "export#export", as: :export
 
   root to: redirect("/users"), via: :all
 end

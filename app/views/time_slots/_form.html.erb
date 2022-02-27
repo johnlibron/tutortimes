@@ -26,6 +26,11 @@
     <%= form.datetime_select :ends_at %>
   </div>
 
+  <div class="field">
+    <%= form.label :capacity %>
+    <%= form.number_field :capacity, min: 1 %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
