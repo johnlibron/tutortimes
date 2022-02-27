@@ -17,6 +17,7 @@ class TimeSlotsTest < ApplicationSystemTestCase
     fill_in "Name", with: @time_slot.name
     select_date_and_time @time_slot.begins_at, from: "time_slot_begins_at"
     select_date_and_time @time_slot.ends_at, from: "time_slot_ends_at"
+    fill_in "Capacity", with: @time_slot.capacity
     click_on "Create Time slot"
 
     assert_text "Time slot was successfully created"
@@ -30,6 +31,7 @@ class TimeSlotsTest < ApplicationSystemTestCase
     fill_in "Name", with: @time_slot.name
     select_date_and_time @time_slot.begins_at, from: "time_slot_begins_at"
     select_date_and_time @time_slot.ends_at, from: "time_slot_ends_at"
+    fill_in "Capacity", with: @time_slot.capacity
     click_on "Update Time slot"
 
     assert_text "Time slot was successfully updated"

@@ -6,13 +6,16 @@ art_history:
   name: Art History
   begins_at: <%= start %>
   ends_at: <%= start + 1.hour %>
+  capacity: 1
 
 chemistry:
   name: Chemistry
   begins_at: <%= start + 30.minutes %>
   ends_at: <%= start + 2.hours %>
+  capacity: 1
 
 mathematics:
   name: Mathematics
   begins_at: <%= start + 1.hour %>
   ends_at: <%= start + 2.hours %>
+  capacity: 1

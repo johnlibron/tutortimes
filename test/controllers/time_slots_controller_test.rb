@@ -45,4 +45,9 @@ class TimeSlotsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to time_slots_url
   end
+
+  test "should export a tomorrow schedule" do
+    get export_url(date: DateTime.now.tomorrow.strftime("%Y-%m-%d"))
+    assert_response :success
+  end
 end

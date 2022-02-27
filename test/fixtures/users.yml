@@ -5,6 +5,11 @@ unregistered:
   email: unregistered@example.com
   token: UNREGISTERED
 
+unregistered_two:
+  name: Unregistered Two
+  email: unregistered.two@example.com
+  token: UNREGISTERED_TWO
+
 registered:
   name: Registered
   email: registered@example.com

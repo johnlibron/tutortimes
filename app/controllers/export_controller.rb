@@ -56,7 +56,7 @@ class ExportController < ApplicationController
             end
             render status: :ok
         else
-            render status: :unprocessable_entity
+            render status: :bad_request
         end
 
     end
