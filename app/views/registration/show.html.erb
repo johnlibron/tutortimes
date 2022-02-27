@@ -2,6 +2,11 @@
 
 <hr>
 
+<% if notice %>
+  <p id="warning"><%= notice['warning'] %></p>
+  <%= button_to "Proceed", register_conflict_time_slot_path(@user.token, notice['selected_time_slot_id'], notice['conflict_time_slot_ids'].join(',')), method: :put %>
+<% end %>
+
 <% @time_slots.group_by { |s| s.begins_at.to_date }.each do |date, time_slots| %>
   <h2><%= date.to_s(:date) %></h2>
   <%= render partial: "time_slot", collection: time_slots %>
